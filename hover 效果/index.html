@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hover效果</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="login">
+        <h1>Login</h1>
+        <form action="#">
+            <input type="text" placeholder="账号" />
+            <input type="password" placeholder="密码" />
+            <button>登录</button>
+        </form>
+    </div>
+
+    <script>
+        let login = document.querySelector('.login')
+        let span = document.createElement('span')
+        login.addEventListener('mouseenter', function(e){
+
+            inTime = new Date().getDate()
+            login.appendChild(span)
+
+            span.style.animation = 'in .5s ease-out forwards'
+
+            let top = e.clientY - e.target.offsetTop
+            let left = e.clientX - e.target.offsetLeft
+
+            span.style.top = top + 'px'
+            span.style.left = left + 'px'
+        })
+
+        login.addEventListener('mouseleave', function(e){
+            outTime = new Date().getDate()
+            let passTime = outTime - inTime
+            if(passTime < 500)
+            {
+                setTimeout(mouseleave, 500 - passTime)
+            }
+            else
+            {
+                mouseleave()
+            }
+
+            function mouseleave()
+            {span.style.animation = 'out .5s ease-out forwards'
+
+            let top = e.clientY - e.target.offsetTop
+            let left = e.clientX - e.target.offsetLeft
+
+            span.style.top = top + 'px'
+            span.style.left = left + 'px'}
+        })
+    </script>
+</body>
+
+</html>

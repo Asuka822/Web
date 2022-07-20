@@ -1,0 +1,79 @@
+* {
+    /* 初始化标准 */
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    width: 100vw;
+    height: 100vh;
+    background-color: bisque;
+    background: url(./background.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-content {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    background: linear-gradient(to right, #c04848, #480048);
+    /* background: url(./background.jpg) no-repeat; */
+    /* background-size: cover; */
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.banner-box {
+    display: inline-block;
+    width: 500px;
+    height: 100%;
+    background: url(./background.jpg) no-repeat;
+    background-size: cover;
+    border-radius: 20px 0 0 20px;
+}
+
+.login-box {
+    width: 330px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-box>h1 {
+    font-size: 36px;
+    margin: 60px;
+    color: #fff;
+}
+
+.login-box>input {
+    margin-bottom: 20px;
+    width: 200px;
+    height: 36px;
+    padding: 0 20px;
+}
+
+.login-btn {
+    width: 150px;
+    height: 40px;
+    border: none;
+    background-color: tomato;
+    color: white;
+    font-size: 18px;
+}
+
+@media screen and (max-width:900px){
+    .login-content{
+         margin: 0 30px;
+    }
+    .banner-box{
+        border-radius: 20px;
+    }
+     
+}
